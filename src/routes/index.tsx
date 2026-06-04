@@ -51,14 +51,14 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="flex items-center justify-center">
+          {/* Logo */}
+<a href="#" className="flex items-center group">
   <img
-    src="/images/logo.png"
+    src="/images/Brio Logo.png"
     alt="BrioPharma"
-    className="h-12 w-auto object-contain"
+    className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
   />
-</div>
+</a>
             <div>
               <span className="font-bold textsky-700 text-lg leading-none block">BrioPharma</span>
               <span className="font-semibold text-sky-800 text-xs leading-none tracking-widest uppercase">Tienda</span>
