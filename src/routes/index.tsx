@@ -54,7 +54,7 @@ function Header() {
           {/* Logo */}
 <a href="#" className="flex items-center group">
   <img
-    src="/images/Brio Logo.png"
+    src="/images/logo-briopharma.png"
     alt="BrioPharma"
     className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
   />
