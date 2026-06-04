@@ -1,0 +1,258 @@
+@import "tailwindcss" source("../");
+
+:root {
+  --blue-primary: #00AEEF;
+  --blue-light: #5CC8FF;
+  --blue-dark: #0077B6;
+
+  --blue-50: #F0FAFF;
+  --blue-100: #D9F3FF;
+  --blue-200: #B3E8FF;
+  --blue-600: #00AEEF;
+  --blue-700: #0090D0;
+  --blue-800: #0077B6;
+}
+
+@theme {
+  --primary: #00AEEF;
+  --primary-light: #5CC8FF;
+  --primary-dark: #0077B6;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0FAFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00AEEF;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0077B6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-float {
+  animation: pulse-whatsapp 2s infinite;
+}
+
+/* Hero principal */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #0077B6 0%,
+    #009FE3 45%,
+    #5CC8FF 100%
+  );
+}
+
+/* Tarjetas */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 174, 239, 0.18);
+}
+.product-card {
+  border: 1px solid rgba(0, 174, 239, 0.08);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.95);
+}
+
+/* Botón principal */
+.btn-green {
+  background: linear-gradient(
+    135deg,
+    #00AEEF,
+    #5CC8FF
+  );
+  transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+  background: linear-gradient(
+    135deg,
+    #0077B6,
+    #009FE3
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 174, 239, 0.35);
+}
+
+/* WhatsApp */
+.btn-whatsapp {
+  background: linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(
+    135deg,
+    #128C7E,
+    #075E54
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Divisor */
+.section-divider {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00AEEF,
+    transparent
+  );
+  margin: 0 auto;
+  width: 80px;
+}
+
+/* Badges */
+.badge {
+  background: linear-gradient(
+    135deg,
+    #f59e0b,
+    #ef4444
+  );
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-new {
+  background: linear-gradient(
+    135deg,
+    #00AEEF,
+    #5CC8FF
+  );
+}
+
+.badge-premium {
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+}
+
+/* Testimonios */
+.testimonial-card {
+  background: linear-gradient(
+    135deg,
+    #F0FAFF,
+    #FFFFFF
+  );
+  border: 1px solid #B3E8FF;
+}
+
+/* Promociones */
+.promo-card {
+  background: linear-gradient(
+    135deg,
+    #0077B6 0%,
+    #009FE3 60%,
+    #5CC8FF 100%
+  );
+}
+
+/* Fondo Farmacia Premium */
+.leaf-bg {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 174, 239, 0.08) 0%,
+      transparent 18%
+    ),
+
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(0, 119, 182, 0.06) 0%,
+      transparent 20%
+    ),
+
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(92, 200, 255, 0.08) 0%,
+      transparent 18%
+    ),
+
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(0, 174, 239, 0.05) 0%,
+      transparent 22%
+    ),
+
+    linear-gradient(
+      180deg,
+      #f8fcff 0%,
+      #eef7ff 100%
+    );
+}
