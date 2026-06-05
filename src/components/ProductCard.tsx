@@ -128,7 +128,7 @@ className="bg-white rounded-[32px] max-w-6xl w-full shadow-[0_25px_80px_rgba(0,0
             href={buildWhatsAppUrl(waMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 text-white font-bold px-8 py-5 rounded-2xl w-full bg-gradient-to-r from-blue-700 to-sky-500 hover:scale-[1.02] transition-all duration-300 shadow-xl"
+            className="inline-flex items-center justify-center gap-3 text-white font-bold px-8 py-5 rounded-2xl w-full bg-blue-600 shadow-xl"
           >
 <WhatsAppIcon className="w-5 h-5" />
 Solicitar Información
