@@ -11,9 +11,8 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string>('all')
 
-  const featured = products.filter((p) => p.featured)
-  const filtered =
-    activeCategory === 'all' ? products : products.filter((p) => p.category === activeCategory)
+const featured = products.filter((p) => p.featured)
+const filtered = products
 
   return (
     <div className="min-h-screen bg-white">
@@ -21,7 +20,7 @@ function HomePage() {
       <main>
         <HeroSection />
         <CategoriesSection activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-        <ProductCatalog products={filtered} activeCategory={activeCategory} />
+       <ProductCatalog products={products} activeCategory={activeCategory} />
         <FeaturedSection products={featured} />
         <PromotionsSection />
         <TestimonialsSection />
@@ -51,14 +50,14 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          {/* Logo */}
-<a href="#" className="flex items-center group">
+          <a href="#" className="flex items-center gap-2 group">
+            <div className="flex items-center justify-center">
   <img
-    src="/images/logo-briopharma.png"
+    src="/images/logo.png"
     alt="BrioPharma"
-    className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    className="h-12 w-auto object-contain"
   />
-</a>
+</div>
             <div>
               <span className="font-bold textsky-700 text-lg leading-none block">BrioPharma</span>
               <span className="font-semibold text-sky-800 text-xs leading-none tracking-widest uppercase">Tienda</span>
@@ -158,7 +157,7 @@ function HeroSection() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
               Tu Salud y Bienestar
               <br />
-              <span className="text-cyan-300">
+              <span className="text-sky-300">
                 Comienzan Aquí
               </span>
             </h1>
@@ -206,7 +205,7 @@ function HeroSection() {
 
             <div className="flex items-center justify-center gap-10 mt-12 pt-10 border-t border-white/20">
               {[
-                { value: '3000+', label: 'Productos' },
+                { value: '1000+', label: 'Productos' },
                 { value: 'Expertos', label: 'Asesoría' },
                 { value: '2', label: 'Puntos de Venta' },
               ].map((stat) => (
@@ -254,7 +253,7 @@ function CategoriesSection({
     <section id="categorias" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">Explora</span>
+          <span className="text-sky-600 font-semibold text-sm uppercase tracking-widest">Explora</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 mb-3">
             Nuestras Categorías
           </h2>
@@ -269,8 +268,8 @@ function CategoriesSection({
             onClick={() => setActiveCategory('all')}
             className={`group flex flex-col items-center gap-3 p-5 rounded-2xl border-2 transition-all ${
               activeCategory === 'all'
-                ? 'border-green-600 bg-green-600 text-white shadow-lg'
-                : 'border-green-100 bg-green-50 text-gray-700 hover:border-green-400 hover:bg-green-100'
+                ? 'border-sky-600 bg-sky-600 text-white shadow-lg'
+                : 'border-sky-100 bg-sky-50 text-gray-700 hover:border-sky-400 hover:bg-sky-100'
             }`}
           >
             <span className="text-3xl">🌿</span>
@@ -283,7 +282,7 @@ function CategoriesSection({
               onClick={() => setActiveCategory(cat.id)}
               className={`group flex flex-col items-center gap-3 p-5 rounded-2xl border-2 transition-all ${
                 activeCategory === cat.id
-                  ? 'border-green-600 bg-green-600 text-white shadow-lg'
+                  ? 'border-sky-600 bg-sky-600 text-white shadow-lg'
                   : 'border-green-100 bg-green-50 text-gray-700 hover:border-green-400 hover:bg-green-100'
               }`}
             >
@@ -308,7 +307,7 @@ function ProductCatalog({ products: items, activeCategory }: { products: typeof 
     <section id="productos" className="py-16 bg-green-50 leaf-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">Catálogo</span>
+          <span className="text-sky-600 font-semibold text-sm uppercase tracking-widest">Catálogo</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 mb-3">{categoryName}</h2>
           <div className="section-divider mb-4" />
           <p className="text-gray-500">{items.length} productos disponibles</p>
@@ -330,7 +329,7 @@ function FeaturedSection({ products: featured }: { products: typeof products }) 
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">⭐ Destacados</span>
+          <span className="text-sky-600 font-semibold text-sm uppercase tracking-widest">⭐ Destacados</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 mb-3">
             Más Vendidos
           </h2>
@@ -359,7 +358,7 @@ function FeaturedSection({ products: featured }: { products: typeof products }) 
                   />
                 </div>
                 <div className="flex flex-col flex-1">
-                  <span className="text-xs text-green-600 font-semibold uppercase tracking-wider mb-1">
+                  <span className="text-xs text-sky-600 font-semibold uppercase tracking-wider mb-1">
                     {product.badge ?? '⭐ Destacado'}
                   </span>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
@@ -367,7 +366,7 @@ function FeaturedSection({ products: featured }: { products: typeof products }) 
                     {product.shortDescription}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-black text-green-700">
+                    <span className="text-xl font-black text-sky-700">
                       ${product.price.toLocaleString('es-CO')}
                       <span className="text-xs text-gray-400 font-normal ml-1">COP</span>
                     </span>
@@ -421,10 +420,10 @@ function PromotionsSection() {
   ]
 
   return (
-    <section id="promociones" className="py-20 bg-green-50">
+    <section id="promociones" className="py-20 bg-sky-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">🔥 Especiales</span>
+          <span className="text-sky-600 font-semibold text-sm uppercase tracking-widest">🔥 Especiales</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 mb-3">
             Promociones del Mes
           </h2>
@@ -537,8 +536,8 @@ function TestimonialsSection() {
 
               <p className="text-gray-600 text-sm leading-relaxed flex-1">"{t.text}"</p>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-green-100">
-                <div className="w-10 h-10 rounded-full btn-green flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+              <div className="flex items-center gap-3 pt-3 border-t border-sky-100">
+                <div className="w-10 h-10 rounded-full btn-sky flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                   {t.avatar}
                 </div>
                 <div>
@@ -559,17 +558,17 @@ function LocationsSection() {
   const locations = [
     {
       name: 'Sede Cra 27',
-      address: 'Carrera 27, Bogotá, Colombia',
-      hours: 'Lun–Sáb: 8:00am – 7:00pm\nDom: 9:00am – 2:00pm',
-      phone: '+57 300 123 4567',
+      address: 'Carrera 27 21-26, Bucaramanga, Colombia',
+      hours: 'Lun–Sáb: 9:00 am – 9:00 pm\nDom: 9:00 am – 9:00 pm',
+      phone: '+57 316 3825106 - 320 901 8732 - 320 901 8752',
       emoji: '🏪',
       mapMessage: '¡Hola! Quiero conocer la dirección exacta de la sede Cra 27.',
     },
     {
       name: 'Sede Acrópolis',
-      address: 'Centro Comercial Acrópolis, Bogotá, Colombia',
-      hours: 'Lun–Sáb: 10:00am – 8:00pm\nDom: 11:00am – 6:00pm',
-      phone: '+57 300 765 4321',
+      address: 'Centro Comercial Acrópolis, Bucaramanga, Colombia',
+      hours: 'Lun–Sáb: 08:30 am – 9:00 pm\nDom: 08:30 am – 9:00 pm',
+      phone: '+57 316 3825106 - 320 901 8732 - 320 901 8752',
       emoji: '🏬',
       mapMessage: '¡Hola! Quiero conocer la ubicación exacta de la sede Acrópolis.',
     },
@@ -599,13 +598,13 @@ function LocationsSection() {
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-start gap-3 text-sm text-gray-600">
-                  <svg className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-sky-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="whitespace-pre-line">{loc.hours}</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-sky-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span>{loc.phone}</span>
@@ -664,13 +663,13 @@ function ContactSection() {
                   </svg>
                 ),
                 label: 'Email',
-                value: 'info@naturalshop.co',
-                href: 'mailto:info@naturalshop.co',
+                value: 'Briopharmasas@gmail.com',
+                href: 'mailto:Briopharmasas@gmail.com',
               },
               {
                 icon: <WhatsAppIcon className="w-6 h-6" />,
                 label: 'WhatsApp',
-                value: '+57 300 123 4567',
+                value: '+57 316 3825106 - 320 901 8732 - 320 901 8752',
                 href: buildWhatsAppUrl('¡Hola! Tengo una consulta sobre sus productos naturales.'),
               },
             ].map((contact) => (
@@ -732,17 +731,34 @@ function Footer() {
           </div>
 
           {/* Links */}
-          <div>
-            <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">Categorías</h4>
-            <ul className="space-y-2">
-              {['Vitaminas', 'Suplementos', 'Control de Peso', 'Medicina Natural', 'Nutrición Deportiva', 'Cuidado Personal'].map((cat) => (
-                <li key={cat}>
-                  <a href="#categorias" className="text-green-200 text-sm hover:text-white transition-colors">{cat}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+<ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+  {[
+    'Antioxidantes y Defensas',
+    'Articulaciones y Huesos',
+    'Belleza y Bienestar',
+    'Bienestar Sexual y Potenciadores',
+    'Cardiovascular y Circulación',
+    'Cuidado Muscular y Corporal',
+    'Digestión, Fibra e Hígado',
+    'Energía y Vitalidad',
+    'Higiene y Cuidado Personal',
+    'Laboratorio Leon',
+    'Memoria y Bienestar Mental',
+    'Sueño y Descanso',
+    'Suplemento de Magnesio',
+    'Suplementos Deportivos',
+    'Vitaminas, Suplementos y Multivitamínicos'
+  ].map((cat) => (
+    <li key={cat}>
+      <a
+        href="#categorias"
+        className="text-green-200 text-sm hover:text-white transition-colors"
+      >
+        {cat}
+      </a>
+    </li>
+  ))}
+</ul>
           <div>
             <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">Empresa</h4>
             <ul className="space-y-2">

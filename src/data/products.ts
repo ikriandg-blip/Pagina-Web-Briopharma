@@ -11,14 +11,97 @@ export interface Product {
 }
 
 export const categories = [
-  { id: 'vitaminas', name: 'Vitaminas', icon: '💊', description: 'Vitaminas esenciales para tu bienestar' },
-  { id: 'suplementos', name: 'Suplementos', icon: '🌿', description: 'Suplementos naturales de alta calidad' },
-  { id: 'control-peso', name: 'Control de Peso', icon: '⚖️', description: 'Apoya tu camino hacia el peso ideal' },
-  { id: 'medicina-natural', name: 'Medicina Natural', icon: '🌱', description: 'Remedios naturales y herbolaria' },
-  { id: 'nutricion-deportiva', name: 'Nutrición Deportiva', icon: '💪', description: 'Potencia tu rendimiento atlético' },
-  { id: 'cuidado-personal', name: 'Cuidado Personal', icon: '✨', description: 'Belleza y cuidado con ingredientes naturales' },
+  {
+    id: 'antioxidantes-defensas',
+    name: 'Antioxidantes y Defensas',
+    icon: '🛡️',
+    description: 'Fortalece tu sistema inmune y protege tu organismo'
+  },
+  {
+    id: 'articulaciones-huesos',
+    name: 'Articulaciones y Huesos',
+    icon: '🦴',
+    description: 'Apoyo para la movilidad y salud ósea'
+  },
+  {
+    id: 'belleza-bienestar',
+    name: 'Belleza y Bienestar',
+    icon: '✨',
+    description: 'Productos para tu belleza y cuidado integral'
+  },
+  {
+    id: 'bienestar-sexual',
+    name: 'Bienestar Sexual y Potenciadores',
+    icon: '❤️',
+    description: 'Apoyo para la vitalidad y bienestar sexual'
+  },
+  {
+    id: 'cardiovascular',
+    name: 'Cardiovascular y Circulación',
+    icon: '🫀',
+    description: 'Cuida tu corazón y sistema circulatorio'
+  },
+  {
+    id: 'cuidado-muscular',
+    name: 'Cuidado Muscular y Corporal',
+    icon: '💪',
+    description: 'Recuperación y bienestar muscular'
+  },
+  {
+    id: 'digestion-higado',
+    name: 'Digestión, Fibra e Hígado',
+    icon: '🌿',
+    description: 'Salud digestiva y hepática'
+  },
+  {
+    id: 'energia-vitalidad',
+    name: 'Energía y Vitalidad',
+    icon: '⚡',
+    description: 'Más energía para tu día a día'
+  },
+  {
+    id: 'higiene-personal',
+    name: 'Higiene y Cuidado Personal',
+    icon: '🧴',
+    description: 'Cuidado diario para toda la familia'
+  },
+  {
+    id: 'laboratorio-leon',
+    name: 'Laboratorio Leon',
+    icon: '🏥',
+    description: 'Productos especializados Laboratorio León'
+  },
+  {
+    id: 'memoria-mental',
+    name: 'Memoria y Bienestar Mental',
+    icon: '🧠',
+    description: 'Apoyo cognitivo y bienestar emocional'
+  },
+  {
+    id: 'sueno-descanso',
+    name: 'Sueño y Descanso',
+    icon: '🌙',
+    description: 'Mejora la calidad de tu descanso'
+  },
+  {
+    id: 'magnesio',
+    name: 'Suplemento de Magnesio',
+    icon: '💊',
+    description: 'Magnesio para músculos, energía y relajación'
+  },
+  {
+    id: 'deportivos',
+    name: 'Suplementos Deportivos',
+    icon: '🏋️',
+    description: 'Nutrición para entrenamiento y rendimiento'
+  },
+  {
+    id: 'vitaminas-multivitaminicos',
+    name: 'Vitaminas, Suplementos y Multivitamínicos',
+    icon: '🍊',
+    description: 'Complementos nutricionales para tu bienestar'
+  }
 ]
-
 const products: Array<Product> = [
   // Vitaminas
   {
@@ -194,15 +277,26 @@ const products: Array<Product> = [
     price: 28000,
     category: 'cuidado-personal',
   },
-  {
-    id: 18,
-    name: 'Crema de Aloe Vera SPF 30',
-    image: 'https://images.unsplash.com/photo-1556228852-80b6e5eeff06?w=600&q=80',
-    description: 'Hidratante facial con aloe vera orgánico, ácido hialurónico y protección solar SPF 30. Hidrata durante 24 horas, reduce la aparición de manchas y protege del fotoenvejecimiento.',
-    shortDescription: 'Hidratación intensa con protección solar todo el día.',
-    price: 55000,
-    category: 'cuidado-personal',
-  },
+ {
+  id: 18,
+  name: 'Crema de Aloe Vera SPF 30',
+  image: 'https://images.unsplash.com/photo-1556228852-80b6e5eeff06?w=600&q=80',
+  description: 'Hidratante facial con aloe vera orgánico, ácido hialurónico y protección solar SPF 30. Hidrata durante 24 horas, reduce la aparición de manchas y protege del fotoenvejecimiento.',
+  shortDescription: 'Hidratación intensa con protección solar todo el día.',
+  price: 55000,
+  category: 'cuidado-personal',
+},
+
+{
+  id: 19,
+  name: 'Aceite de Coco Virgen 100 ml Zoi',
+  image: '/images/products/Calcio_Coral_Marino_500_gr_Zoi.jpg',
+  description: 'Producto de prueba',
+  shortDescription: 'Producto de prueba',
+  price: 25000,
+  category: 'Digestión, Fibra e Hígado',
+},
+
 ]
 
 export default products
